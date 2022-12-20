@@ -16,3 +16,4 @@ Route::get('categories',[\App\Http\Controllers\Api\CategoryController::class,'ca
 Route::post('categories',[\App\Http\Controllers\Api\CategoryController::class,'addCategory'])->name('add.categories');
 Route::post('categories/{category}',[\App\Http\Controllers\Api\CategoryController::class,'updateCategory'])->name('update.categories');
 Route::get('categories/{category}',[\App\Http\Controllers\Api\CategoryController::class,'deleteCategory'])->name('delete.categories');
+

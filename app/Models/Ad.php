@@ -25,12 +25,24 @@ class Ad extends Model
         'updated_at',
     ];
 
-    public function ads(){
-        return $this->belongsToMany(Ad::class,'ad_tags','tag_id','ad_id');
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class,'ad_tags','ad_id','tag_id');
     }
 
     public function category()
     {
         return $this->belongsTo(Category::class,'category_id');
+    }
+
+    public function scopeFilter($query,$filters,$relation)
+    {
+        foreach ($filters as $filterKey => $filterValue){
+            if($filterKey == 'name')
+                $query->where($filterKey,'like', '%' . $filterValue . '%');
+            else
+                $query->whereRelation($relation,$filterKey,$filterValue);
+        }
+        return $query;
     }
 }

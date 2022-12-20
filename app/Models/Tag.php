@@ -20,7 +20,8 @@ class Tag extends Model
         'updated_at',
     ];
 
-    public function ads(){
+    public function ads()
+    {
         return $this->belongsToMany(Ad::class,'ad_tags','tag_id','ad_id');
     }
 

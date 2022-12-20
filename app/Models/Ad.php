@@ -38,8 +38,8 @@ class Ad extends Model
     public function scopeFilter($query,$filters,$relation)
     {
         foreach ($filters as $filterKey => $filterValue){
-            if($filterKey == 'name')
-                $query->where($filterKey,'like', '%' . $filterValue . '%');
+            if($filterKey == 'category_id')
+                $query->where($filterKey,$filterValue);
             else
                 $query->whereRelation($relation,$filterKey,$filterValue);
         }

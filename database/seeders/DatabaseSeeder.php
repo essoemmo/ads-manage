@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
         \App\Models\Tag::factory(5)->create();
         \App\Models\Advertiser::factory(5)->create();
         \App\Models\Ad::factory(10)->create();
+        \App\Models\AdTag::factory(10)->create();
     }
 }

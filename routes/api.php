@@ -17,3 +17,5 @@ Route::post('categories',[\App\Http\Controllers\Api\CategoryController::class,'a
 Route::post('categories/{category}',[\App\Http\Controllers\Api\CategoryController::class,'updateCategory'])->name('update.categories');
 Route::get('categories/{category}',[\App\Http\Controllers\Api\CategoryController::class,'deleteCategory'])->name('delete.categories');
 
+Route::get('ads',  [\App\Http\Controllers\Api\AdController::class,'filter']);
+

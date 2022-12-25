@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('daily:mail')->timezone('Africa/Cairo')->dailyAt('17:05');
+        $schedule->command('daily:mail')->timezone('Africa/Cairo')->dailyAt('20:00');
     }
 
     /**
